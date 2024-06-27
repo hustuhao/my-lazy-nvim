@@ -16,3 +16,6 @@ require("lazy").setup({{import = "mario.plugins"}}, {
         enabled = false -- disable check for config file changes
     }
 })
+
+
+require("lazy").setup({{import = "mario.config"}}, {})
