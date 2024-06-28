@@ -11,6 +11,9 @@ return {
 					python = { "isort", "black" },
 					-- Use a sub-list to run only the first available formatter
 					javascript = { { "prettierd", "prettier" } },
+					go = { "goimports" },
+					sh = { "shfmt" },
+					sql = { "sqlfmt" },
 				},
 				-- to format on save
 				format_on_save = {
