@@ -26,19 +26,23 @@ vim.opt.shiftwidth = 3
 vim.wo.number = true
 vim.wo.relativenumber = false
 
--- filetype related 
+-- vim.o.termguicolors = true
+-- vim.cmd("colorscheme darcula-dark")
+--vim.cmd.colorscheme("darcula-dark")
+
+-- filetype related
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"gitcommit"},
-    callback = function(ev)
-        vim.api.nvim_set_option_value("textwidth", 72, {scope = "local"})
-    end
+	pattern = { "gitcommit" },
+	callback = function(ev)
+		vim.api.nvim_set_option_value("textwidth", 72, { scope = "local" })
+	end,
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"markdown"},
-    callback = function(ev)
-        vim.api.nvim_set_option_value("textwidth", 0, {scope = "local"})
-        vim.api.nvim_set_option_value("wrapmargin", 0, {scope = "local"})
-        vim.api.nvim_set_option_value("linebreak", true, {scope = "local"})
-    end
+	pattern = { "markdown" },
+	callback = function(ev)
+		vim.api.nvim_set_option_value("textwidth", 0, { scope = "local" })
+		vim.api.nvim_set_option_value("wrapmargin", 0, { scope = "local" })
+		vim.api.nvim_set_option_value("linebreak", true, { scope = "local" })
+	end,
 })

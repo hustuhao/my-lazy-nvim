@@ -23,11 +23,34 @@ return {
 	--
 
 	-- add darcula
-	{ "doums/darcula" },
+	--{ "doums/darcula" },
+	--{
+	--	"LazyVim/LazyVim",
+	--	opts = {
+	--		colorscheme = "darcula",
+	--	},
+	--},
+	--
+	--
+	--
+	--
+
+	{ "xiantang/darcula-dark.nvim" },
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "darcula",
+			colorscheme = "darcula-dark",
 		},
 	},
+
+	--	"xiantang/darcula-dark.nvim",
+	--	dependencies = {
+	--		"nvim-treesitter/nvim-treesitter",
+	--	},
+	--
+	--
+	-- "santos-gabriel-dario/darcula-solid.nvim",
+	-- dependencies = {
+	-- 	"rktjmp/lush.nvim",
+	-- },
 }
