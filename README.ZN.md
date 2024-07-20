@@ -19,4 +19,14 @@
 - [telescope](https://github.com/nvim-telescope/telescope.nvim):一个高度可扩展的列表模糊查找器。
 - [toggleterm](https://github.com/akinsho/toggleterm.nvim): 切换终端
 - [navigator](https://github.com/ray-x/navigator.lua): 代码分析和导航
+- [mason](https://github.com/williamboman/mason.nvim): 便捷的包管理器，轻松管理 LSP server，DAP server，linter 和 formatter
 
+
+
+## 支持新的语言
+
+### Mason
+
+使用 Mason 轻松安装 LSP server，DAP server，linter 和 formatter
+
+只需要在输入命令 Mason，然后选择需要安装的组件即可。
