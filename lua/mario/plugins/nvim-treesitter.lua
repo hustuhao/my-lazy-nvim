@@ -11,13 +11,14 @@ return {
 	config = function()
 		local treesitter = require("nvim-treesitter.configs")
 
-		vim.api.nvim_create_autocmd("FileType", {
-			pattern = { "markdown" },
-			callback = function(ev)
-				-- treesitter-context is buggy with Markdown files
-				require("treesitter-context").disable()
-			end,
-		})
+		--https://github.com/LazyVim/LazyVim/discussions/2536
+		-- vim.api.nvim_create_autocmd("FileType", {
+		-- 	pattern = { "markdown" },
+		-- 	callback = function(ev)
+		-- 		-- treesitter-context is buggy with Markdown files
+		-- 		require("treesitter-context").disable()
+		-- 	end,
+		-- })
 
 		treesitter.setup({
 			ensure_installed = {
@@ -31,7 +32,8 @@ return {
 				"javascript",
 				"json",
 				"lua",
-				"markdown",
+				-- "markdown",
+				-- "markdown_inline",
 				"proto",
 				"python",
 				"rego",
@@ -49,6 +51,7 @@ return {
 			highlight = {
 				enable = true,
 				disable = { "csv" }, -- preferring chrisbra/csv.vim
+				additional_vim_regex_highlighting = { "ruby" },
 			},
 			textobjects = { select = { enable = true, lookahead = true } },
 		})

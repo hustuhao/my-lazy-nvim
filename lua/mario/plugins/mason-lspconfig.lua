@@ -6,6 +6,7 @@ local handlers = {
 		require("lspconfig")[server_name].setup({})
 	end,
 	-- Next, you can provide targeted overrides for specific servers.
+	-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 	["dockerls"] = function()
 		local lspconfig = require("lspconfig")
 		settings = {
@@ -21,6 +22,14 @@ local handlers = {
 			filetypes = { "dockerfile", "Dockerfile", "df" },
 		})
 	end,
+	--[[
+	["marksman"] = function()
+		local lspconfig = require("lspconfig")
+		lspconfig.marksman.setup({
+			filetypes = { "markdown", "MD", "md" },
+		})
+	end,
+	--]]
 }
 
 return {
@@ -30,7 +39,18 @@ return {
 	"neovim/nvim-lspconfig",
 	config = function()
 		require("mason-lspconfig").setup({
-			ensure_installed = { "clangd", "pyright", "bashls", "lua_ls", "vimls", "jdtls", "html", "dockerls" },
+			ensure_installed = {
+				"clangd",
+				"pyright",
+				"bashls",
+				"lua_ls",
+				"vimls",
+				"jdtls",
+				"html",
+				"dockerls",
+				-- "marksman", use markdown.nvim
+				"sqlfmt",
+			},
 			automatic_installation = true,
 			handlers = handlers,
 		})
