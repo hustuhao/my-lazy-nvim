@@ -2,6 +2,8 @@ return {
 	"nvim-telescope/telescope.nvim",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		"andrew-george/telescope-themes",
+
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",
@@ -43,6 +45,7 @@ return {
 
 		telescope.load_extension("fzf")
 		telescope.load_extension("file_browser")
+		telescope.load_extension("themes")
 
 		local builtin = require("telescope.builtin")
 
