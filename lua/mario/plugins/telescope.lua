@@ -2,8 +2,6 @@ return {
 	"nvim-telescope/telescope.nvim",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"andrew-george/telescope-themes",
-
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",
@@ -15,12 +13,52 @@ return {
 	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
-
+		-- https://github.com/ayoubelmhamdi/nvim/blob/cc527e62efd24b7541d556490e12d639fd799626/lua/c_telescope.lua#L4
 		telescope.setup({
 			defaults = {
 				sorting_strategy = "ascending",
-				layout_strategy = "horizontal",
-				layout_config = { prompt_position = "top" },
+				prompt_prefix = "🔍",
+				selection_caret = "» ",
+				-- layout_strategy = "horizontal",
+				-- layout_config = {
+				-- 	prompt_position = "bottom",
+				-- 	horizontal = {
+				-- 		width_padding = 0.04,
+				-- 		height_padding = 0.1,
+				-- 		preview_width = 1,
+				-- 		preview_cutoff = 0,
+				-- 	},
+				-- 	vertical = {
+				-- 		width_padding = 0.05,
+				-- 		height_padding = 1,
+				-- 		preview_height = 0.5,
+				-- 		preview_cutoff = 0,
+				-- 	},
+				-- },
+				--
+				layout_strategy = "vertical",
+				layout_config = {
+					vertical = {
+						width = 0.9,
+						height = 0.9,
+						preview_height = 0.6,
+						preview_cutoff = 0,
+					},
+				},
+				-- layout_strategy = "flex",
+				-- layout_config = {
+				-- 	flex = {
+				-- 		width = 0.9,
+				-- 	},
+				-- },
+				winblend = 0, -- 窗口透明度
+				color_devicons = true, -- 使用彩色图标
+				set_env = { ["COLORTERM"] = "truecolor" },
+				file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+				grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+				qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+				buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
+
 				mappings = {
 					i = {
 						["<C-k>"] = actions.move_selection_previous, -- move to prev result
@@ -32,20 +70,37 @@ return {
 			extensions = {
 				file_browser = {
 					path = "%:p:h", -- open from within the folder of your current buffer
-					display_stat = false, -- don't show file stat
+					display_stat = true, -- don't show file stat
 					grouped = true, -- group initial sorting by directories and then files
 					hidden = true, -- show hidden files
 					hide_parent_dir = true, -- hide `../` in the file browser
 					hijack_netrw = false, -- use telescope file browser when opening directory paths
 					prompt_path = true, -- show the current relative path from cwd as the prompt prefix
 					use_fd = true, -- use `fd` instead of plenary, make sure to install `fd`
+					heading = { treesitter = true },
+					-- ["ui-select"] = { require("telescope.themes").get_dropdown({}) },
+				},
+				fzf = {
+					fuzzy = true, -- false will only do exact matching
+					override_generic_sorter = true,
+					override_file_sorter = true,
+					case_mode = "smart_case", -- this is default
+				},
+			},
+			pickers = {
+				find_files = {
+					-- theme = "ivy", -- dropdown
+					-- theme = "dropdown",
+					previewer = true,
+				},
+				live_grep = {
+					-- theme = "dropdown",
+					previewer = true,
 				},
 			},
 		})
-
 		telescope.load_extension("fzf")
 		telescope.load_extension("file_browser")
-		telescope.load_extension("themes")
 
 		local builtin = require("telescope.builtin")
 
