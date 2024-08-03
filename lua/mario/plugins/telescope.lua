@@ -54,10 +54,10 @@ return {
 				winblend = 0, -- 窗口透明度
 				color_devicons = true, -- 使用彩色图标
 				set_env = { ["COLORTERM"] = "truecolor" },
-				file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-				grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-				qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-				buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
+				-- file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+				-- grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+				-- qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+				-- buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
 
 				mappings = {
 					i = {
@@ -70,13 +70,13 @@ return {
 			extensions = {
 				file_browser = {
 					path = "%:p:h", -- open from within the folder of your current buffer
-					display_stat = true, -- don't show file stat
+					display_stat = false, -- don't show file stat
 					grouped = true, -- group initial sorting by directories and then files
 					hidden = true, -- show hidden files
 					hide_parent_dir = true, -- hide `../` in the file browser
 					hijack_netrw = false, -- use telescope file browser when opening directory paths
 					prompt_path = true, -- show the current relative path from cwd as the prompt prefix
-					use_fd = true, -- use `fd` instead of plenary, make sure to install `fd`
+					use_fd = false, -- use `fd` instead of plenary, make sure to install `fd`
 					heading = { treesitter = true },
 					-- ["ui-select"] = { require("telescope.themes").get_dropdown({}) },
 				},
