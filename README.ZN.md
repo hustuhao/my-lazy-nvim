@@ -20,6 +20,7 @@
 - [toggleterm](https://github.com/akinsho/toggleterm.nvim): 切换终端
 - [navigator](https://github.com/ray-x/navigator.lua): 代码分析和导航
 - [mason](https://github.com/williamboman/mason.nvim): 便捷的包管理器，轻松管理 LSP server，DAP server，linter 和 formatter
+- [outline](https://github.com/hedyhli/outline.nvim):由LSP驱动的、在代码编辑器中快速浏览和导航代码元素的侧边栏
 
 
 
