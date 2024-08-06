@@ -7,7 +7,7 @@ return {
 	},
 	keys = {
 		{ "<leader>nf", "<Cmd>NvimTreeFindFile<cr>", desc = "NvimTree Find file" },
-		{ "<leader>nt", "<Cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree" },
+		{ "<leader>nt", "<Cmd>NvimTreeToggle<cr>",   desc = "Toggle NvimTree" },
 	},
 
 	config = function()
@@ -46,8 +46,8 @@ return {
 		vim.keymap.set("n", "P", api.node.navigate.parent, opts("Parent Directory"))
 		vim.keymap.set("n", "r", api.fs.rename, opts("Rename"))
 		vim.keymap.set("n", "x", api.fs.cut, opts("Cut"))
-		vim.keymap.set("n", "y", api.fs.copy.filename, opts("Copy Name"))
-		vim.keymap.set("n", "Y", api.fs.copy.relative_path, opts("Copy Relative Path"))
+		vim.keymap.set("n", "yn", api.fs.copy.filename, opts("Copy Name"))
+		vim.keymap.set("n", "yrp", api.fs.copy.relative_path, opts("Copy Relative Path"))
 		-- END_DEFAULT_ON_ATTACH
 
 		require("nvim-tree").setup({})
