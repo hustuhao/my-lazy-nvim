@@ -10,10 +10,12 @@ return {
 					-- Conform will run multiple formatters sequentially
 					python = { "isort", "black" },
 					-- Use a sub-list to run only the first available formatter
-					javascript = { { "prettierd", "prettier" } },
+					javascript = { "prettierd", "prettier" },
 					go = { "goimports" },
 					sh = { "shfmt" },
 					sql = { "sqlfmt" },
+					md = { "shfmt" },
+					json = { "jq" },
 				},
 				-- to format on save
 				format_on_save = {

@@ -47,8 +47,10 @@ return {
 				"vimls",
 				"jdtls",
 				"html",
+				"docker_compose_language_service",
 				"dockerls",
-				-- "marksman", use markdown.nvim
+				"dockerfile-language-server",
+				"marksman", -- use markdown.nvim
 				"sqlfmt",
 			},
 			automatic_installation = true,
