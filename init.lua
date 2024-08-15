@@ -1,5 +1,6 @@
 require("mario.default")
 require("mario.lazy")
+
 --vim.lsp.set_log_level(vim.log.levels.DEBUG)
 
 -- -- 加载自定义插件

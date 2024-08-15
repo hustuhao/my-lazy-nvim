@@ -1,3 +1,25 @@
+local layouts = {
+	{
+		elements = {
+			-- Elements can be strings or table with id and size keys.
+			{ id = "scopes", size = 0.25 },
+			"breakpoints",
+			"stacks",
+			"watches",
+		},
+		size = 40, -- 40 columns
+		position = "left",
+	},
+	{
+		elements = {
+			"repl",
+			"console",
+		},
+		size = 0.25, -- 25% of total lines
+		position = "bottom",
+	},
+}
+
 return {
 	{
 		"mfussenegger/nvim-dap",
@@ -8,11 +30,15 @@ return {
 			"nvim-neotest/nvim-nio",
 			"williamboman/mason.nvim",
 		},
+
+		-- https://github.com/Alexis12119/nvim-config
 		config = function()
 			local dap = require("dap")
 			local ui = require("dapui")
 
-			require("dapui").setup()
+			ui.setup({
+				layouts = layouts,
+			})
 			require("dap-go").setup()
 
 			require("nvim-dap-virtual-text").setup({
@@ -77,18 +103,20 @@ return {
 			vim.keymap.set("n", "<F5>", dap.step_back)
 			vim.keymap.set("n", "<F13>", dap.restart)
 
-			dap.listeners.before.attach.dapui_config = function()
-				ui.open()
-			end
-			dap.listeners.before.launch.dapui_config = function()
-				ui.open()
-			end
-			dap.listeners.before.event_terminated.dapui_config = function()
-				ui.close()
-			end
-			dap.listeners.before.event_exited.dapui_config = function()
-				ui.close()
-			end
+			-- dap.listeners.before.attach.dapui_config = function()
+			-- 	ui.open()
+			-- end
+			-- dap.listeners.before.launch.dapui_config = function()
+			-- 	ui.open()
+			-- end
+			-- dap.listeners.before.event_terminated.dapui_config = function()
+			-- 	ui.close()
+			-- end
+			-- dap.listeners.before.event_exited.dapui_config = function()
+			-- 	ui.close()
+			-- end
+
+			require("mario.plugins.dap.settings.bash-debug-adapter")
 		end,
 	},
 }
