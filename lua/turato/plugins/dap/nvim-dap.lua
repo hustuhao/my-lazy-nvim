@@ -116,7 +116,7 @@ return {
 			-- 	ui.close()
 			-- end
 
-			require("mario.plugins.dap.settings.bash-debug-adapter")
+			require("turato.plugins.dap.settings.bash-debug-adapter")
 		end,
 	},
 }

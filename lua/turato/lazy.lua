@@ -11,7 +11,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "mario.plugins" } }, {
+require("lazy").setup({
+	{ import = "turato.plugins" },
+	{ import = "turato.plugins.dap" },
+}, {
 	checker = {
 		enabled = false, -- disable check for plugin updates
 	},
@@ -20,7 +23,7 @@ require("lazy").setup({ { import = "mario.plugins" } }, {
 	},
 })
 
-require("lazy").setup({ { import = "mario.config" } }, {})
+require("lazy").setup({ { import = "turato.config" } }, {})
 
 -- lang python
 -- require("lazy").setup({

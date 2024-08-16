@@ -1,5 +1,5 @@
-require("mario.default")
-require("mario.lazy")
+require("turato.default")
+require("turato.lazy")
 
 --vim.lsp.set_log_level(vim.log.levels.DEBUG)
 
