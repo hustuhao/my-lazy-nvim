@@ -103,20 +103,42 @@ return {
 			vim.keymap.set("n", "<F5>", dap.step_back)
 			vim.keymap.set("n", "<F13>", dap.restart)
 
-			-- dap.listeners.before.attach.dapui_config = function()
-			-- 	ui.open()
-			-- end
-			-- dap.listeners.before.launch.dapui_config = function()
-			-- 	ui.open()
-			-- end
-			-- dap.listeners.before.event_terminated.dapui_config = function()
-			-- 	ui.close()
-			-- end
-			-- dap.listeners.before.event_exited.dapui_config = function()
-			-- 	ui.close()
+			-- ui
+			dap.listeners.before.attach.dapui_config = function()
+				ui.open()
+			end
+			dap.listeners.before.launch.dapui_config = function()
+				ui.open()
+			end
+			dap.listeners.before.event_terminated.dapui_config = function()
+				ui.close()
+			end
+			dap.listeners.before.event_exited.dapui_config = function()
+				ui.close()
+			end
+
+			-- load settings for debugger
+			-- local settings_path = "turato.plugins.dap.settings"
+			-- local settings_dir = vim.fn.stdpath("config") .. "/lua/turato/plugins/dap/settings/"
+			--
+			-- for _, file in ipairs(vim.fn.readdir(settings_dir, [[v:val =~ '\.lua$']])) do
+			-- 	local module_name = file:gsub("%.lua$", "")
+			-- 	require(settings_path .. "." .. module_name)
 			-- end
 
+			-- NOTE: Make sure to install the needed files/exectubles through mason
+			-- require("plugins.dap.settings.cpptools")
+			-- require("plugins.dap.settings.netcoredbg")
+			-- require("plugins.dap.settings.godot")
 			require("turato.plugins.dap.settings.bash-debug-adapter")
+			-- require("plugins.dap.settings.php-debug-adapter")
+			-- require("plugins.dap.settings.dart-debug-adapter")
+			-- require("plugins.dap.settings.chrome-debug-adapter")
+			-- require("plugins.dap.settings.firefox-debug-adapter")
+			require("turato.plugins.dap.settings.java-debug")
+			require("turato.plugins.dap.settings.debugpy")
+			-- require("plugins.dap.settings.go-debug-adapter")
+			require("turato.plugins.dap.settings.js-debug")
 		end,
 	},
 }

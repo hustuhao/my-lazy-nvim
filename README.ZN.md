@@ -29,61 +29,6 @@
 - [plenary](https://github.com/nvim-lua/plenary.nvim):一个使用协程进行异步编程的lua模块
 
 
- ● barbar.nvim 15.83ms  start
-    ● catppuccin 4.86ms  start
-    ● cmp-nvim-lsp 0.1ms  nvim-cmp
-    ● cmp_luasnip 0.06ms  nvim-cmp
-    ● Comment.nvim 2.46ms  start
-    ● conform.nvim 1.36ms  start
-    ● csv.vim 1.04ms  start
-    ● darcula-dark.nvim 0.06ms  start
-    ● diffview.nvim 5.97ms  gitsigns.nvim
-    ● fittencode.nvim 12.85ms  start
-    ● friendly-snippets 0.12ms  LuaSnip
-    ● gitsigns.nvim 9.02ms  barbar.nvim
-    ● go.nvim 0.13ms  navigator.lua
-    ● guihua.lua 0.44ms  navigator.lua
-    ● lazy.nvim 16.93ms  init.lua
-    ● LazyVim 8.47ms  start
-    ● lsp_signature.nvim 3.39ms  navigator.lua
-    ● lspkind-nvim 0.1ms  nvim-cmp
-    ● lualine.nvim 11.81ms  start
-    ● LuaSnip 22.54ms  nvim-cmp
-    ● mason-lspconfig.nvim 0.03ms  start
-    ● mason.nvim 4.06ms  nvim-dap
-    ● mini.nvim 0.25ms  render-markdown
-    ● navigator.lua 65.75ms  start
-    ● nvim 0.22ms  lualine.nvim
-    ● nvim-cmp 40.15ms  navigator.lua
-    ● nvim-dap 18.69ms  start
-    ● nvim-dap-go 2.68ms  nvim-dap
-    ● nvim-dap-ui 0.05ms  nvim-dap
-    ● nvim-dap-virtual-text 0.17ms  nvim-dap
-    ● nvim-lspconfig 5.67ms  nvim-cmp
-    ● nvim-nio 0.16ms  nvim-dap
-    ● nvim-surround 2.57ms  VeryLazy
-    ● nvim-tree.lua 28.09ms  start
-    ● nvim-treesitter 12.47ms  navigator.lua
-    ● nvim-treesitter-context 1.12ms  nvim-treesitter
-    ● nvim-treesitter-textobjects 8.64ms  nvim-treesitter
-    ● nvim-web-devicons 0.87ms  nvim-tree.lua
-    ● outline.nvim 3.72ms  start
-    ● plenary.nvim 0.57ms 󰢱 plenary.async  telescope-live-grep-args.nvim
-    ● render-markdown 6ms  start
-    ● telescope-file-browser.nvim 0.24ms  telescope.nvim
-    ● telescope-fzf-native.nvim 0.05ms  telescope.nvim
-    ● telescope-live-grep-args.nvim 15.17ms  telescope.nvim
-    ● telescope.nvim 22.37ms  start
-    ● vim-clang-format 1.09ms  start
-    ● which-key.nvim 3.43ms  start
-    ○ markdown-preview.nvim  MarkdownPreviewToggle  MarkdownPreview  MarkdownPreviewStop  markdown 
-    ○ toggleterm.nvim  <leader>te  <leader>t  TermExec  ToggleTerm 
-
-  Disabled (1)
-    
-
-
-
 ## 支持新的语言
 
 ### Mason
@@ -91,3 +36,11 @@
 使用 Mason 轻松安装 LSP server，DAP server，linter 和 formatter
 
 只需要在输入命令 Mason，然后选择需要安装的组件即可。
+
+### DEBUG 配置
+
+位置：lua/turato/plugins/dap
+
+在 settting 目录中添加相应的配置后，需要在 nvim-dap.lua 中引用
+
+
