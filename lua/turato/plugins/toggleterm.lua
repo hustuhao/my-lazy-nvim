@@ -7,10 +7,10 @@ return {
 			"<leader>te",
 			function()
 				require("toggleterm.terminal").Terminal
-					:new({
-						direction = "float",
-					})
-					:toggle()
+					 :new({
+						 direction = "float",
+					 })
+					 :toggle()
 			end,
 			desc = "Lazydocker",
 		},
@@ -18,10 +18,10 @@ return {
 			"<leader>t",
 			function()
 				require("toggleterm.terminal").Terminal
-					:new({
-						direction = "horizontal",
-					})
-					:toggle()
+					 :new({
+						 direction = "horizontal",
+					 })
+					 :toggle()
 			end,
 			desc = "LazyHorizontalTerm",
 		},
@@ -47,7 +47,7 @@ return {
 	config = function()
 		require("toggleterm").setup({
 			shade_terminals = false,
-			-- shell = "zsh --login",
+			shell = "bash --login",
 		})
 		-- key maps
 	end,
