@@ -8,6 +8,7 @@ return {
 			enabled = true,
 		},
 		{ "nvim-telescope/telescope-file-browser.nvim", enabled = true },
+		{ "nvim-telescope/telescope-dap.nvim",          enabled = true },
 	},
 	branch = "0.1.x",
 	config = function()
@@ -51,7 +52,7 @@ return {
 				-- 		width = 0.9,
 				-- 	},
 				-- },
-				winblend = 0, -- 窗口透明度
+				winblend = 0,  -- 窗口透明度
 				color_devicons = true, -- 使用彩色图标
 				set_env = { ["COLORTERM"] = "truecolor" },
 				-- file_previewer = require("telescope.previewers").vim_buffer_cat.new,
@@ -61,8 +62,8 @@ return {
 
 				mappings = {
 					i = {
-						["<C-k>"] = actions.move_selection_previous, -- move to prev result
-						["<C-j>"] = actions.move_selection_next, -- move to next result
+						["<C-k>"] = actions.move_selection_previous,           -- move to prev result
+						["<C-j>"] = actions.move_selection_next,               -- move to next result
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist, -- send selected to quickfixlist
 					},
 				},
@@ -101,11 +102,10 @@ return {
 		})
 		telescope.load_extension("fzf")
 		telescope.load_extension("file_browser")
-
+		telescope.load_extension("dap")
 		local builtin = require("telescope.builtin")
 
 		-- key maps
-
 		local map = vim.keymap.set
 		local opts = { noremap = true, silent = true }
 
