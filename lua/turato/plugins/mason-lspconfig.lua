@@ -52,6 +52,9 @@ return {
 				"dockerfile-language-server",
 				"marksman", -- use markdown.nvim
 				"sqlfmt",
+				"prettier",
+				"prettierd",
+				"yamlfmt",
 			},
 			automatic_installation = true,
 			handlers = handlers,

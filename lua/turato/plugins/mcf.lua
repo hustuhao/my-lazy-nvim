@@ -1,27 +1,46 @@
 return {
 	"hustuhao/markdown-codeblock-format.nvim",
-	config = function()
-		local opts = {
-			-- Define the formatters to use for each language
-			formatters = {
-				lua = { "stylua" },
-				python = { "black" },
-				javascript = { "prettier" },
-				sh = { "shfmt" },
-				sql = { "sqlfmt" },
-				go = { "goimports", "gofmt" },
-				rust = { "rustfmt" },
-				json = { "jq" },
-			},
-		}
-		require("turato.mcf").setup(opts)
-		--require("turato.log").level = vim.log.levels.DEBUG
-	end,
+	ft = { "md", "markdown" },
+	-- config = function()
+	-- 	params = {
+	-- 		-- Define the formatters to use for each language
+	-- 		formatters = {
+	-- 			lua = { "stylua" },
+	-- 			python = { "black" },
+	-- 			javascript = { "prettier" },
+	-- 			sh = { "shfmt" },
+	-- 			sql = { "sqlfmt" },
+	-- 			go = { "goimports", "gofmt" },
+	-- 			rust = { "rustfmt" },
+	-- 			json = { "jq11" },
+	-- 			yml = { "prettier" },
+	-- 		},
+	-- 	}
+	-- 	require("mcf").setup(params)
+	-- 	require("mcf.log").level = vim.log.levels.DEBUG
+	-- end,
+
+	opts = {
+		-- Define the formatters to use for each language
+		formatters = {
+			lua = { "stylua" },
+			python = { "black" },
+			javascript = { "prettier" },
+			sh = { "shfmt" },
+			sql = { "sqlfmt" },
+			go = { "goimports", "gofmt" },
+			rust = { "rustfmt" },
+			json = { "jq11" },
+			yaml = { "yamlfmt" },
+			yml = { "yamlfmt" },
+		},
+	},
+
 	keys = {
 		-- Define key mappings using the 'keys' configuration in LazyVim
 		{
 			"<leader>fm",
-			':lua require("turato.mcf").format_selected_code()<CR>',
+			':lua require("mcf").format_selected_code()<CR>',
 			mode = "v", -- Visual mode
 			noremap = true,
 			silent = true,

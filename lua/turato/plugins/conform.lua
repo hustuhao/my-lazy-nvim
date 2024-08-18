@@ -16,7 +16,10 @@ return {
 					sql = { "sqlfmt" },
 					md = { "shfmt" },
 					json = { "jq" },
+					yaml = { "yamlfmt" },
+					yml = { "yamlfmt" },
 				},
+				formatters = {},
 				-- to format on save
 				format_on_save = {
 					-- These options will be passed to conform.format()
