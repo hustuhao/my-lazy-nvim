@@ -1,5 +1,7 @@
 return {
 	"hustuhao/markdown-codeblock-format.nvim",
+	dir = "~/projects/markdown-codeblock-format.nvim",
+	dev = true,
 	ft = { "md", "markdown" },
 	-- config = function()
 	-- 	params = {
@@ -30,10 +32,11 @@ return {
 			sql = { "sqlfmt" },
 			go = { "goimports", "gofmt" },
 			rust = { "rustfmt" },
-			json = { "jq11" },
+			json = { "jq" },
 			yaml = { "yamlfmt" },
 			yml = { "yamlfmt" },
 		},
+		log_level = vim.log.levels.ERROR,
 	},
 
 	keys = {
