@@ -1,6 +1,6 @@
 return {
 	"hustuhao/markdown-codeblock-format.nvim",
-	dir = "~/projects/markdown-codeblock-format.nvim",
+	-- dir = "~/projects/markdown-codeblock-format.nvim",
 	dev = true,
 	ft = { "md", "markdown" },
 	-- config = function()
