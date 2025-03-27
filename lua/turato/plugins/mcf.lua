@@ -1,7 +1,8 @@
 return {
 	"hustuhao/markdown-codeblock-format.nvim",
+	-- 本地测试模式
 	-- dir = "~/projects/markdown-codeblock-format.nvim",
-	dev = true,
+	--	dev = true,
 	ft = { "md", "markdown" },
 	-- config = function()
 	-- 	params = {
