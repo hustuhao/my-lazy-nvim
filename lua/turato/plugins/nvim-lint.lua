@@ -5,7 +5,7 @@ return {
 		local lint = require("lint")
 		lint.linters_by_ft = {
 			go = { "golangcilint", "cspell" },
-			markdown = { "markdownlint", "cspell" },
+			markdown = { "cspell" },
 			lua = { "cspell" },
 			python = { "cspell" },
 			javascript = { "cspell" },

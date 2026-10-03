@@ -23,8 +23,6 @@ require("lazy").setup({
 	},
 })
 
-require("lazy").setup({ { import = "turato.config" } }, {})
-
 -- lang python
 -- require("lazy").setup({
 --   spec = {

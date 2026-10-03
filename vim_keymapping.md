@@ -84,10 +84,10 @@ which-key 在等待后续按键时提示映射。`<Space>?` 已用于调试表�
 | `[d` / `]d` | 上一个/下一个诊断问题 |
 
 - 读取文件、保存文件、离开插入模式时自动检查。
-- Go：`golangci-lint` + `cspell`；Markdown：`markdownlint` + `cspell`。
+- Go：`golangci-lint` + `cspell`；Markdown：仅 `cspell`，关闭 Markdown 格式规范检查。
 - Lua、Python、JavaScript/TypeScript（含 JSX/TSX）、Shell：`cspell`。
-- 缺少工具时自动检查跳过，手动检查提示。`cspell`、`markdownlint` 由 Mason 安装，`golangci-lint` 使用系统安装。
-- 项目可用 `.golangci.yml`、`cspell.json`、`.markdownlint.json` 配置规则。
+- 缺少工具时自动检查跳过，手动检查提示。`cspell` 由 Mason 安装，`golangci-lint` 使用系统安装。
+- 项目可用 `.golangci.yml`、`cspell.json` 配置规则。
 
 ## 复制历史：Yanky
 

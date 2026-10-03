@@ -16,12 +16,11 @@ return {
 			"goimports",
 			"goimports-reviser",
 			"gomodifytags",
-			"gopls",
+			{ "gopls", version = "v0.23.0" },
 			"js-debug-adapter",
 			"jdtls",
 			"json-lsp",
 			"lua-language-server",
-			"markdownlint",
 			-- "marksman", use markdown.nvim
 			"prettier",
 			"prettierd",
